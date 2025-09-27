@@ -1,454 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Mongolia – The Heart of Asia</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css"/>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container inner">
-      <div class="brand"><span class="dot"></span> Mongolia</div>
-      <div class="navmenu">
-        <a href="#home" class="active">Home</a>
-        <a href="#overview">Overview</a>
-        <a href="#health">Health</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#people">People</a>
-        <a href="#festivals">Festivals</a>
-        <a href="#entertainment">Entertainment</a>
-        <a href="#language">Language</a>
-        <a href="#sports">Sports</a>
-        <a href="#beauty">Beauty</a>
-        <a href="#population">Population</a>
-        <a href="#communication">Communication</a>
-        <a href="#environment">Environment</a>
-        <a href="#credits">Credits</a>
-      </div>
-    </div>
-  </nav>
 
-  <header id="home" class="hero">
-    <div class="container">
-      <div class="wrap">
-        <div>
-          <h1>Mongolia — The Heart of Asia</h1>
-          <p>Endless blue skies, vast steppes, and a living nomadic heritage. Explore culture, language, sports, festivals, and modern life in this Asian nation.</p>
-          <a class="btn" href="#overview">Start exploring</a>
-          <a class="btn alt" href="#credits">How to edit</a>
-        </div>
-        <img src="images/hero.svg" alt="Mongolia hero image"/>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Mongolia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #2C3E50;
+      background-color: #F8F6E8;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+      color: #F8F6E8;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #F39C12;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-menu li {
+      margin: 0.25rem;
+    }
+
+    .nav-menu a {
+      color: #F8F6E8;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .nav-menu a:hover {
+      background-color: #27AE60;
+      transform: translateY(-2px);
+    }
+
+    main {
+      margin-top: 80px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)),
+        url('images/mongolia-flag.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #F8F6E8;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      background: #FFFFFF;
+      margin-bottom: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #2C3E50;
+      margin-bottom: 2rem;
+      text-align: center;
+      border-bottom: 3px solid #F39C12;
+      padding-bottom: 1rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .content-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #34495E;
+    }
+
+    .content-media {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #E8E8E8, #F0F0F0);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7F8C8D;
+      font-size: 1.1rem;
+      border: 2px dashed #BDC3C7;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #2C3E50;
+      color: #F8F6E8;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .section-number {
+      position: absolute;
+      top: -10px;
+      left: 2rem;
+      background: #F39C12;
+      color: #FFFFFF;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .nav-menu a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">MONGOLIA</div>
+      <ul class="nav-menu">
+        <li><a href="#country">Country</a></li>
+        <li><a href="#population">Population</a></li>
+        <li><a href="#personality">Personality</a></li>
+        <li><a href="#language">Language</a></li>
+        <li><a href="#festivals">Festivals</a></li>
+        <li><a href="#entertainment">Entertainment</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#communication">Communication</a></li>
+        <li><a href="#environment">Environment</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#beauty">Beauty</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+      </ul>
+    </nav>
   </header>
 
-  
-<section id="overview" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>001. Asian Country (Overview)</h2>
-      <div class="sub">ภาพรวมประเทศมองโกเลีย</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Mongolia lies between Russia and China, known for the open steppe, the Gobi Desert, and the legacy of the Mongol Empire. Today it blends nomadic traditions with rapid urban growth in Ulaanbaatar.</p>
-          <p><b>TH:</b> มองโกเลียตั้งอยู่ระหว่างรัสเซียและจีน โดดเด่นด้วยทุ่งหญ้าสเตปป์ ทะเลทรายโกบี และประวัติศาสตร์จักรวรรดิ ปัจจุบันผสานวิถีเร่ร่อนกับความทันสมัยในอูลานบาตอร์</p>
-          <ul><li>Capital – Ulaanbaatar</li><li>Population ~3.4M</li><li>Currency – Tugrik (MNT)</li><li>Landlocked between Russia & China</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/overview.svg" alt="001. Asian Country (Overview) placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="health" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>002. Health & Wellness</h2>
-      <div class="sub">สุขภาพและความเป็นอยู่</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Mongolian wellness draws from hearty diets of meat and dairy, herbal remedies, and hot springs. City lifestyles increasingly include fitness and balanced diets.</p>
-          <p><b>TH:</b> สุขภาพแบบมองโกเลียเน้นอาหารเนื้อ-นม สมุนไพร น้ำพุร้อน และในเมืองนิยมฟิตเนสและโภชนาการสมดุลมากขึ้น</p>
-          <ul><li>Air-dried meat (borts)</li><li>Milk tea (suutei tsai)</li><li>Hot springs & herbal remedies</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/health.svg" alt="002. Health & Wellness placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="leadership" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>003. Political Leadership</h2>
-      <div class="sub">ผู้นำและการเมือง</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> From historical Khans to modern presidents and prime ministers, Mongolia’s system emphasizes democratic institutions and rule of law.</p>
-          <p><b>TH:</b> จากข่านในอดีตสู่ผู้นำสมัยใหม่ ระบบกึ่งประธานาธิบดีให้ความสำคัญกับสถาบันประชาธิปไตยและนิติรัฐ</p>
-          <ul><li>Parliament: State Great Khural</li><li>Semi-presidential elements</li><li>Focus on institutions & rule of law</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/leadership.svg" alt="003. Political Leadership placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="people" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>004. Personality (Notable Figures)</h2>
-      <div class="sub">บุคคลสำคัญ</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Mongolia’s image is shaped by historic icons and modern figures in arts, sports, and business.</p>
-          <p><b>TH:</b> ภาพลักษณ์ประเทศหลอมรวมจากบุคคลสำคัญทั้งในอดีตและปัจจุบัน ทั้งศิลปะ กีฬา และธุรกิจ</p>
-          <ul><li>Genghis Khan (historic legacy)</li><li>Artists & athletes</li><li>Entrepreneurs</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/people.svg" alt="004. Personality (Notable Figures) placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="festivals" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>005. Cultural Festivals</h2>
-      <div class="sub">เทศกาลวัฒนธรรม</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Naadam showcases the Three Manly Games, while Tsagaan Sar marks Lunar New Year with family gatherings and traditional foods.</p>
-          <p><b>TH:</b> นาดามเฉลิมฉลองสามกีฬา ส่วนซากานซาร์คือปีใหม่จันทรคติที่รวมญาติและอาหารดั้งเดิม</p>
-          <ul><li>Naadam: wrestling, archery, horse racing (July)</li><li>Tsagaan Sar: Lunar New Year</li><li>Traditional outfit: deel</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/festivals.svg" alt="005. Cultural Festivals placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="entertainment" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>006. Local Entertainment</h2>
-      <div class="sub">บันเทิงท้องถิ่น</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Mongolian throat singing and horse-head fiddle meet indie pop and a growing film scene.</p>
-          <p><b>TH:</b> การขับร้องคอและมอรินคูร์ผสานกับดนตรีร่วมสมัยและวงการภาพยนตร์ที่เติบโต</p>
-          <ul><li>Throat singing (khoomei)</li><li>Morin khuur (horse-head fiddle)</li><li>Indie pop & growing cinema</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/entertainment.svg" alt="006. Local Entertainment placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="language" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>007. Languages & Dialects</h2>
-      <div class="sub">ภาษาและสำเนียง</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Khalkha Mongolian uses the Cyrillic script nationwide; the Classical script is preserved and taught; Russian and English appear in education and business.</p>
-          <p><b>TH:</b> ภาษามองโกเลียสำเนียงคัลคาใช้อักษรซีริลลิก มีการอนุรักษ์อักษรโบราณ และพบภาษารัสเซีย/อังกฤษในภาคการศึกษาและธุรกิจ</p>
-          <ul><li>Mongolian (Khalkha) with Cyrillic</li><li>Classical script preserved</li><li>Russian/English in schools/business</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/language.svg" alt="007. Languages & Dialects placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="sports" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>008. Traditional Sports</h2>
-      <div class="sub">กีฬาดั้งเดิม</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Traditional sports anchor national identity, and eagle hunting in the west showcases unique skills.</p>
-          <p><b>TH:</b> กีฬาดั้งเดิมหล่อหลอมอัตลักษณ์ชาติ การล่าด้วยอินทรีในตะวันตกสะท้อนทักษะเฉพาะถิ่น</p>
-          <ul><li>Wrestling, archery, horse racing</li><li>Youth riders</li><li>Kazakh eagle hunting</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/sports.svg" alt="008. Traditional Sports placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="beauty" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>009. Asian Beauty (Standards)</h2>
-      <div class="sub">มาตรฐานความงาม</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Natural beauty values healthy skin, sun protection, and minimal makeup; traditional garments inspire modern fashion.</p>
-          <p><b>TH:</b> ค่านิยมความงามเน้นผิวสุขภาพดี กันแดด และเมคอัพน้อย โดยเสื้อผ้าดั้งเดิมสร้างแรงบันดาลใจให้แฟชั่นสมัยใหม่</p>
-          <ul><li>Healthy skin & sun protection</li><li>Minimal makeup</li><li>Deel-inspired fashion</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/beauty.svg" alt="009. Asian Beauty (Standards) placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="population" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>010. Population</h2>
-      <div class="sub">ประชากร</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Mongolia balances rapid urbanization in Ulaanbaatar with rural nomadic life across vast lands.</p>
-          <p><b>TH:</b> ประเทศมีความหนาแน่นประชากรต่ำ เมืองหลวงเติบโตควบคู่ชนบทแบบเร่ร่อน</p>
-          <ul><li>~3.4M people</li><li>Low density</li><li>Urbanization in Ulaanbaatar</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/population.svg" alt="010. Population placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="communication" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>011. Communication (Media & Apps)</h2>
-      <div class="sub">การสื่อสารและโซเชียล</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Platforms connect vast distances; TV/radio remain important beyond cities. Mobile data powers commerce and education.</p>
-          <p><b>TH:</b> แพลตฟอร์มดิจิทัลเชื่อมพื้นที่ห่างไกล ทีวี/วิทยุยังสำคัญนอกเมือง อินเทอร์เน็ตมือถือขับเคลื่อนการค้าและการศึกษา</p>
-          <ul><li>Messaging & social platforms</li><li>TV/radio beyond cities</li><li>Mobile data for commerce & education</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/communication.svg" alt="011. Communication (Media & Apps) placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="environment" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>012. Environment</h2>
-      <div class="sub">สิ่งแวดล้อม</div>
-    </div>
-    <div class="grid">
-      <div class="col-7">
-        <div class="card">
-          <p><b>EN:</b> Key issues include winter smog in Ulaanbaatar, desertification, and climate variability; policies promote cleaner heating and reforestation.</p>
-          <p><b>TH:</b> ประเด็นสำคัญคือมลพิษฤดูหนาว การกลายเป็นทะเลทราย และความผันผวนสภาพอากาศ โดยมีมาตรการพลังงานสะอาดและการปลูกป่า</p>
-          <ul><li>Winter air pollution</li><li>Desertification</li><li>Clean heating, reforestation</li></ul>
-        </div>
-      </div>
-      <div class="col-5 media">
-        <img src="images/environment.svg" alt="012. Environment placeholder"/>
-      </div>
-      <div class="col-12">
-        
-    <div class="yt card">
-      <!-- Replace VIDEO_ID with your YouTube video id -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-    </div>
-    <p class="note">Tip: เปลี่ยน <code>VIDEO_ID</code> ในไฟล์ <b>index.html</b> ให้เป็นลิงก์ YouTube ของคุณ</p>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <section id="credits" class="section">
-    <div class="container">
-      <div class="head">
-        <h2>Credits & How to Edit</h2>
-        <div class="sub">แหล่งที่มา & วิธีแก้ไข</div>
-      </div>
-      <div class="card">
-        <p><b>Images:</b> Placeholder SVGs included in <code>/images</code>. Replace with your royalty‑free images.</p>
-        <p><b>Videos:</b> Edit each <code>VIDEO_ID</code> in the YouTube iframes to your links.</p>
-        <p><b>Typography & Colors:</b> Defined in <code>assets/style.css</code>. Adjust to match your style.</p>
-        <p><b>Navigation:</b> Top menu links to section IDs. Add or reorder by editing the nav in <code>index.html</code>.</p>
-      </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MONGOLIA</h1>
+      <p>Land of Eternal Blue Sky</p>
     </div>
   </section>
 
-  <div class="footer">
-    <div class="container">© sandbox — Mongolia Info Site</div>
-  </div>
-  <a class="backtop" href="#home">Top</a>
-  <script src="assets/script.js"></script>
+  <main>
+    <section id="country" class="section">
+      <div class="section-number">00</div>
+      <h2>Check-in Activity for Asanha Bucha Holiday</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Exploring the Magnificent Gobi Desert:</strong></p>
+          <p>• <strong>Location:</strong> Southern Mongolia, one of the world's largest deserts</p>
+          <p>• <strong>Unique features:</strong> Cold desert with sand dunes, rocky mountains, and rare wildlife</p>
+          <p>• <strong>Famous inhabitants:</strong> Bactrian camels, snow leopards, and Gobi bears</p>
+          <p>• <strong>Fossil discoveries:</strong> Rich paleontological site with dinosaur fossils and eggs</p>
+          <p>• <strong>Climate:</strong> Extreme temperatures from -40°C in winter to 50°C in summer</p>
+          <p>• <strong>Cultural significance:</strong> Ancient Silk Road trade route crossing point</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/eRwfWNMZNc8" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/IMG_5137.avif" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="country" class="section">
+      <div class="section-number">01</div>
+      <h2>Asian Country - Mongolia</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Mongolia is famous for:</strong></p>
+          <p>• <strong>Genghis Khan Equestrian Statue</strong> - The world's largest equestrian statue near Ulaanbaatar
+          </p>
+          <p>• <strong>Vast steppes and nomadic lifestyle</strong> - Traditional way of life preserved through centuries
+          </p>
+          <p>• <strong>Naadam Festival</strong> - Celebrating wrestling, horse racing, and archery</p>
+          <p>• <strong>Traditional food</strong> - Buuz (steamed dumplings) and Khuushuur (fried meat pastry)</p>
+          <p>• <strong>Beautiful landscapes</strong> - From Gobi Desert to high mountains and grasslands</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/gKrQwdwT9R8" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/01.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="population" class="section">
+      <div class="section-number">02</div>
+      <h2>Population</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Mongolia Population Facts:</strong></p>
+          <p>• <strong>Population:</strong> About 3.4 million people</p>
+          <p>• <strong>Density:</strong> One of the most sparsely populated countries</p>
+          <p>• <strong>Life expectancy:</strong> Around 70 years</p>
+          <p>• <strong>Ethnicity:</strong> 95% Khalkha Mongols, also Kazakhs and smaller groups</p>
+          <p>• <strong>Religion:</strong> Tibetan Buddhism, shamanism, and Islam</p>
+          <p>• <strong>Literacy rate:</strong> Over 98%</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/8qM-IpLybdc" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/02.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="language" class="section">
+      <div class="section-number">03</div>
+      <h2>Languages and Dialects</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Mongolian Language Background:</strong></p>
+          <p>• <strong>Hello:</strong> "Sain baina uu!" (Сайн байна уу)</p>
+          <p>• <strong>Speakers:</strong> Over 5 million people</p>
+          <p>• <strong>Standard form:</strong> Khalkha Mongolian</p>
+          <p>• <strong>Writing systems:</strong> Traditional vertical script and modern Cyrillic alphabet</p>
+          <p>• <strong>Cultural connection:</strong> Many words related to horses, nature, and steppe life</p>
+          <p>• <strong>Goodbye:</strong> "Bayartai!"</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fNdxMUNPidU" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/03.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="festivals" class="section">
+      <div class="section-number">04</div>
+      <h2>Cultural Festivals</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Naadam Festival:</strong></p>
+          <p>• <strong>When:</strong> Every July</p>
+          <p>• <strong>The Three Manly Games:</strong> Wrestling, horse racing, and archery</p>
+          <p>• <strong>Significance:</strong> Symbol of Mongolian pride and tradition</p>
+          <p>• <strong>Tourism:</strong> Attracts many international visitors annually</p>
+          <p>• <strong>Cultural importance:</strong> Preserves ancient Mongolian warrior traditions</p>
+          <p>• <strong>Location:</strong> Celebrated nationwide with main events in Ulaanbaatar</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/vEWQRA5tBMA" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/04.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="entertainment" class="section">
+      <div class="section-number">05</div>
+      <h2>Local Entertainment</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Biyelgee - Traditional Folk Dance:</strong></p>
+          <p>• <strong>Performance style:</strong> Performed in sitting or half-sitting position</p>
+          <p>• <strong>Origin:</strong> Developed inside small gers (traditional homes)</p>
+          <p>• <strong>Storytelling:</strong> Hand and arm movements tell stories of herding, hunting, nomadic life</p>
+          <p>• <strong>Costumes:</strong> Colorful traditional clothing</p>
+          <p>• <strong>Music:</strong> Live music with morin khuur (horsehead fiddle)</p>
+          <p>• <strong>Cultural significance:</strong> Living expression of Mongolian identity</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/rrDP7wqR0F0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/05.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="personality" class="section">
+      <div class="section-number">06</div>
+      <h2>Personality (Midterm)</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Personal vs Mongolian Personality:</strong></p>
+          <p>• <strong>INFJ Personality:</strong> Introverted, thoughtful, idealistic, prefers meaningful conversations
+          </p>
+          <p>• <strong>Mongolian Personality:</strong> Strong, independent, community-oriented, direct communication</p>
+          <p>• <strong>Similarities:</strong> Both value helping others and building connections</p>
+          <p>• <strong>Differences:</strong> Mongolians are more open/direct, while INFJ is more reserved</p>
+          <p>• <strong>Cultural values:</strong> Cooperation, hospitality, resilience from nomadic traditions</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/wmRFDrmJ-oc" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/06.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="sports" class="section">
+      <div class="section-number">07</div>
+      <h2>Traditional Sports</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Bökh - Mongolian Wrestling:</strong></p>
+          <p>• <strong>Meaning:</strong> "Durability" or "firmness"</p>
+          <p>• <strong>Rules:</strong> Make opponent touch ground with anything other than feet soles</p>
+          <p>• <strong>Unique features:</strong> No weight classes or time limits</p>
+          <p>• <strong>Traditional costume:</strong> Zodog (open-chested jacket) and Shuudag (tight shorts)</p>
+          <p>• <strong>Cultural significance:</strong> Represents strength, respect, and national identity</p>
+          <p>• <strong>Heritage:</strong> Honors Mongolia's nomadic and warrior spirit</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/rJKviCB1JnQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/07.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="communication" class="section">
+      <div class="section-number">08</div>
+      <h2>Communication</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>E-Mongolia App:</strong></p>
+          <p>• <strong>Purpose:</strong> Government's official digital service platform</p>
+          <p>• <strong>Services:</strong> Apply for ID cards, check tax info, pay fines, request documents</p>
+          <p>• <strong>Convenience:</strong> Over 500 public services in one place</p>
+          <p>• <strong>Accessibility:</strong> Especially helpful for people in remote areas</p>
+          <p>• <strong>Benefits:</strong> Reduces paperwork, saves time, increases transparency</p>
+          <p>• <strong>Usage:</strong> Essential tool for modern life in Mongolia</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/4LRwtE_f66s" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/08.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="environment" class="section">
+      <div class="section-number">09</div>
+      <h2>Environment</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Environmental Challenges & Solutions:</strong></p>
+          <p>• <strong>Main issue:</strong> Air pollution in Ulaanbaatar from coal burning in gers</p>
+          <p>• <strong>Winter problem:</strong> City becomes one of world's most polluted</p>
+          <p>• <strong>Government actions:</strong> Banned raw coal, promoted processed coal</p>
+          <p>• <strong>Renewable energy:</strong> Wind and solar power projects</p>
+          <p>• <strong>Transportation:</strong> Programs to improve public transport</p>
+          <p>• <strong>Progress:</strong> Slow but steady improvement in environmental protection</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VW7o1C5MdY4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/09.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership" class="section">
+      <div class="section-number">10</div>
+      <h2>Political Leadership (Final)</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Historical & Modern Leaders:</strong></p>
+          <p>• <strong>Chinggis Khaan (1162):</strong> United Mongol tribes, created largest land empire</p>
+          <p>• <strong>Leadership qualities:</strong> Vision, discipline, military strategy</p>
+          <p>• <strong>Legacy:</strong> Connected Asia and Europe, encouraged trade and culture</p>
+          <p>• <strong>Current President:</strong> Khürelsükh Ukhna (2021-present)</p>
+          <p>• <strong>Previous role:</strong> Prime Minister (2017-2021)</p>
+          <p>• <strong>Modern focus:</strong> Economy, renewable energy, democratic system, international relations</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/J3oDI5-K0jo" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/09.png" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="beauty" class="section">
+      <div class="section-number">11</div>
+      <h2>Asian Beauty</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Beauty Standards in Mongolia:</strong></p>
+          <p>• <strong>Traditional values:</strong> Natural beauty, fair skin, clear features, healthy hair</p>
+          <p>• <strong>Cultural ideals:</strong> Strong yet gentle appearance reflecting nomadic lifestyle</p>
+          <p>• <strong>Modern influence:</strong> Social media and international trends</p>
+          <p>• <strong>Current preferences:</strong> Slim bodies, pale skin, big eyes (East Asian influence)</p>
+          <p>• <strong>Urban trends:</strong> Makeup and skincare popularity in cities</p>
+          <p>• <strong>Cultural balance:</strong> Traditional deel clothing during festivals maintains heritage</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/KpF-yIStyU4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/10.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+
+    <section id="wellness" class="section">
+      <div class="section-number">12</div>
+      <h2>Health and Wellness</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p><strong>Healthy Mongolian Lifestyle:</strong></p>
+          <p>• <strong>Dairy products:</strong> Airag (fermented mare's milk) rich in probiotics</p>
+          <p>• <strong>Health benefits:</strong> Improves digestion and boosts immune system</p>
+          <p>• <strong>Physical activity:</strong> Daily horse riding builds strength and balance</p>
+          <p>• <strong>Traditional sports:</strong> Wrestling preserves fitness and cultural identity</p>
+          <p>• <strong>Natural living:</strong> Fresh air and outdoor life from nomadic heritage</p>
+          <p>• <strong>Mental wellness:</strong> Connection with nature supports well-being</p>
+        </div>
+        <div class="content-media">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/tTKJW4ZaqI4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <img src="images/11.jpg" alt="Mongolia Landscape"
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Discover Mongolia - Cultural Journey | Created for Educational Purposes</p>
+    <p>🐎 Land of Eternal Blue Sky 🐎</p>
+  </footer>
 </body>
+
 </html>
